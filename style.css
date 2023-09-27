@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(178,209,247,1) 0%, rgba(231,242,255,1) 100%);
+    padding: 10px;
+}
+
+.todo-app {
+    max-width: 576px;
+    width: 100%;
+    background-color: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    box-shadow: 0 1px 16px hsla(0, 0%, 0%, .12);
+}
+
+.title-img {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 5rem;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.note-img {
+    width: 100px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f0f0f0;
+    border-radius: 30px;
+    margin: 25px 0;
+    padding-left: 20px;
+}
+
+.input-box {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+.add-btn {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #fa6671;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.add-btn:hover {
+    background: #e65163;
+    transition: background-color .4s;
+}
+
+.list-items {
+    list-style: none;
+    font-size: 1.1rem;
+    padding: 12px 8px;
+    user-select: none;
+    cursor: pointer;
+}
+
+@keyframes fade-in {
+    0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.8);
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    }
+}
+
+.todo-list {
+    position: relative;
+    font-size: 15px;
+    background: #fff;
+    border-radius: 3px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 50px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 8px;
+    animation: fade-in 0.3s;
+    cursor: pointer;
+    line-height: 53px;
+    justify-content: space-between;
+}
+
+.todo-list::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+.checked::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background: url(images/checkg.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+.list-item-btn {
+    background: none;
+    border: none;
+    outline: none;
+    display: block;
+    width: 50px;
+    line-height: 50px;
+    color: #555;
+    transition: background-color .4s;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+}
+
+.list-item-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* break points */
+@media screen and (max-width: 340px) {
+    .input {
+        padding-left: 0;
+        flex-direction: column;
+        row-gap: 20px;
+        background: none;
+    }
+
+    .input-box {
+        background: #f0f0f0;
+        width: 100%;
+        border-radius: 30px;
+        padding-block: 16px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width: 341px) {
+    .input {
+        flex-wrap: wrap;
+        row-gap: 20px;
+        background: none;
+        padding-left: 0;
+    }
+
+    .input-box {
+        background: #f0f0f0;
+        width: 315px;
+        max-width: 100%;
+        border-radius: 30px;
+        padding-block: 16px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .input {
+        flex-wrap: unset;
+        background: #f0f0f0;
+    }
+
+    .input-box {
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 10px;
+        color: #555;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        padding-left: 20px;
+    }
+
+    .title {
+        font-size: 4.9rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+        font-size: 5rem;
+    }
+}
