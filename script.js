@@ -20,7 +20,7 @@ addButton.addEventListener('click', () => {
     saveData();
 });
 
-inputBox.addEventListener("keydown", function(event) {
+inputBox.addEventListener("keydown", (event) => {
     if (event.key === 'Enter') {
         event.preventDefault();
         addButton.click();
@@ -28,7 +28,7 @@ inputBox.addEventListener("keydown", function(event) {
 });
 
 
-listItems.addEventListener('click', function (event) {
+listItems.addEventListener('click', (event) => {
     if(event.target.tagName === "LI") {
         event.target.classList.toggle('checked');
         saveData();
