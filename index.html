@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <div class="container">
         <div class="todo-app">
@@ -16,14 +18,21 @@
             </div>
 
             <div class="input">
-                <input type="text" class="input-box" id="input-box" placeholder="Add your text">
+                <input type="text" class="input-box" id="input-box" placeholder="Add your text" required>
                 <button class="add-btn">Add</button>
             </div>
 
             <ul class="list-items">
-                
+                <li class="todo-list">
+                    <span>a</span>
+                    <div class="todo-btns">
+                        <button class="list-item-btn edit-btn">edit</button>
+                        <button class="list-item-btn delete-btn">delete</button>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
 </body>
+
 </html>
