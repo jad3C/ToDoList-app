@@ -6,6 +6,7 @@ const list = document.querySelector("span");
 
 addButton.addEventListener("click", () => {
 	const inputValue = inputBox.value.trim();
+	if (inputValue === "") return;
 	listItems.insertAdjacentHTML(
 		"beforeend",
 		`
@@ -32,7 +33,10 @@ inputBox.addEventListener("keydown", (event) => {
 });
 
 listItems.addEventListener("click", (e) => {
-	if (e.target.classList.contains("edit-btn")) {
+	if (e.target.tagName === "LI") {
+		e.target.classList.toggle("checked");
+		saveData();
+	} else if (e.target.classList.contains("edit-btn")) {
 		const spanTarget = e.target.parentElement.parentElement;
 		const spanValue = spanTarget.parentElement.querySelector(".input-value");
 		const imgTarget = e.target.parentElement;
