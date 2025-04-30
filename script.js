@@ -5,7 +5,7 @@ const listButton = document.querySelector(".list-item-btn");
 const list = document.querySelector("span");
 
 addButton.addEventListener("click", () => {
-	const inputValue = inputBox.value;
+	const inputValue = inputBox.value.trim();
 	listItems.insertAdjacentHTML(
 		"beforeend",
 		`
